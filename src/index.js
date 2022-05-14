@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 // components:
 import CompanyList from "./components/company/companyList";
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/navbar/Navbar"; 
 import CompanyForm from "./components/company/CompanyForm";
 
 //
-import "bootstrap/js/dist/collapse";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import CompanyItem from "./components/company/CompanyItem";
 
 
 // 
@@ -19,11 +19,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Router>
+  
     <Navbar />
       <div className="container my-4">
           <Route exact path="/" component={CompanyList} />
-          <Route path="/companyItem" component={CompanyItem} />
-
+          <Route path="/companyForm" component={CompanyForm} />
           <Route path="/updateCompany/:id" component={CompanyForm} />
       </div>
   </Router>

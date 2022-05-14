@@ -27,7 +27,7 @@ const CompanyList = () => {
     return (
         <div className="row">
             {companies.map((company) => (
-                <CompanyItem key={company.id} company={company} listCompanies={ listCompanies}/>
+                <CompanyItem key={company.id} company={company} listCompanies={listCompanies}/>
             ))}
         </div>
     )

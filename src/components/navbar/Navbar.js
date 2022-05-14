@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import "bootstrap/js/dist/collapse";
 
 
 const Navbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
               <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/companyForm"  >Add Company</Link>
+              <Link className="nav-link" to="/companyForm" >Add Company</Link>
             </li>
           </ul>
         </div>

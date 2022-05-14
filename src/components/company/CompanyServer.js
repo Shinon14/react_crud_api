@@ -20,7 +20,7 @@ export const registerCompany = async (newCompany) => {
         body: JSON.stringify({
             "name": String(newCompany.name).trim(),
             "foundation": parseInt(newCompany.foundation),
-            "website": String(newCompany.site).trim(),
+            "website": String(newCompany.website).trim(),
         })
     })
 };
@@ -28,6 +28,21 @@ export const registerCompany = async (newCompany) => {
 export const deleteCompany = async (companyId) => {
   
     return await fetch(`${API_URL}${companyId}`, {
-        method: "delete"
+        method: "DELETE"
+    })
+};
+
+export const updateCompany = async (companyId, updatedCompany) => {
+  
+    return await fetch(`${API_URL}${companyId}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "name": String(updatedCompany.name).trim(),
+            "foundation": parseInt(updatedCompany.foundation),
+            "website": String(updatedCompany.website).trim(),
+        })
     })
 };
