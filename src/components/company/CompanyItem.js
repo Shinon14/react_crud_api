@@ -24,7 +24,7 @@ const CompanyItem = ({company, listCompanies}) => {
                 <p className="card-text">Founded: <strong>{company.foundation}</strong></p>
                 <a href={company.website} className="btn btn-primary" rel="noopener noreferrer" target="_blank">Go  to website</a>
                 <button onClick={() => company.id && handleDelete(company.id)} className='btn btn-danger my-2'>Delete company</button>
-                <button className='btn btn-secondary' onClick={()=>history.push(`/updateCompany/${company.id}`)}>Editar</button>
+                <button className=' btn btn-secondary' onClick={()=>history.push(`/updateCompany/${company.id}`)}>Editar</button>
             </div>
         </div>
     )

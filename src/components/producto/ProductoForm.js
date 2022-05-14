@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import * as CompanyServer from "./CompanyServer";
+import * as ProductoServer from "./ProductoServer";
 import { useHistory, useParams } from "react-router";
 
 // ========= inicio del componente CompanyForm=========
@@ -11,15 +11,21 @@ const CompanyForm = () => {
 
   // ========= Hook para controlar el estado de los inputs =========
 
-  const initialState = { id: 0, name: "", foundation: "", site: "" };
-  const [company, setCompany] = useState(initialState);
+  const initialState = {
+    id: 0,
+    nombre: "",
+    descripcion: "",
+    precio: "",
+    stock: "",
+  };
+  const [producto, setProducto] = useState(initialState);
 
   // ========= termino de Hooks para controlar el estado de los inputs =========
 
   // esto es para que se ejecute cuando se cargue la pagina y se cargue el formulario, haciendo que se escriba lo que esta en el state inicial
   const handleInputChange = (r) => {
     // esto se ejecuta cada vez que se dentro escribe en el input
-    setCompany({ ...company, [r.target.name]: r.target.value });
+    setProducto({ ...producto, [r.target.name]: r.target.value });
   };
 
   // esta es la funcion para crear una nueva compañia
@@ -28,16 +34,16 @@ const CompanyForm = () => {
     try {
       let res;
       if (!params.id) {
-        res = await CompanyServer.registerCompany(company);
+        res = await ProductoServer.registrarProducto(producto);
         const data = await res.json();
 
         console.log(data);
         // esta comprobacion se encarga de coprobar la respuesta
         if (data.message === "Success") {
-          setCompany(initialState);
+          setProducto(initialState);
         }
       } else {
-          await CompanyServer.updateCompany(params.id, company);
+        await ProductoServer.actualizarProducto(params.id, producto);
       }
       // esto es para que se redireccione a la pagina de la empresa
       history.push("/");
@@ -47,13 +53,13 @@ const CompanyForm = () => {
     }
   };
 
-  const getCompany = async (companyId) => {
+  const getProducto = async (productoId) => {
     try {
-      const res = await CompanyServer.getCompany(companyId);
+      const res = await ProductoServer.getProducto(productoId);
       const data = await res.json();
       console.log(data);
-      const { name, foundation, website } = data.company;
-      setCompany({ name, foundation, website });
+      const { nombre, descripcion, precio, stock } = data.company;
+      setProducto({ nombre, descripcion, precio, stock });
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +67,7 @@ const CompanyForm = () => {
 
   useEffect(() => {
     if (params.id) {
-      getCompany(params.id);
+      getProducto(params.id);
     }
     // eslint-disble-next-line
   }, []);
@@ -69,14 +75,14 @@ const CompanyForm = () => {
   // estructura del codigo
   return (
     <div className="col-md-3 mx-auto">
-      <h2 className="mb-3 text-center">Compañia</h2>
+      <h2 className="mb-3 text-center">Producto</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Nombre</label>
           <input
             type="text"
-            name="name"
-            value={company.name}
+            name="nombre"
+            value={producto.nombre}
             onChange={handleInputChange}
             className="form-control"
             minLength="2"
@@ -87,38 +93,49 @@ const CompanyForm = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Fecha Fundacion</label>
+          <label className="form-label">Descripcion</label>
           <input
-            type="number"
-            name="foundation"
-            value={company.foundation}
+            type="text"
+            name="descripcion"
+            value={producto.descripcion}
             onChange={handleInputChange}
             className="form-control"
-            min="1900"
-            max="2080"
             required
           />
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Sitio web</label>
+          <label className="form-label">Precio</label>
           <input
             type="text"
-            name="website"
-            value={company.website}
+            name="precio"
+            value={producto.precio}
             onChange={handleInputChange}
             className="form-control"
-            maxLength="100"
+            maxLength="5"
             required
           />
         </div>
+
+        <div className="mb-3">
+          <label className="form-label">Stock</label>
+          <input
+            type="number"
+            name="stock"
+            value={producto.stock}
+            onChange={handleInputChange}
+            className="form-control"
+            required
+          />
+        </div>
+
         <div className="d-grid gap-2">
           {params.id ? (
             <button type="submit" className="btn btn-block btn-primary">
-              Update
+              Actualizar Producto
             </button>
           ) : (
-            <button className="btn btn-block btn-success">Registrar</button>
+            <button className="btn btn-block btn-success">Registrar Producto</button>
           )}
         </div>
       </form>
