@@ -6,8 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/navbar/Navbar";
 import CompanyList from "./components/company/companyList";
 import CompanyForm from "./components/company/CompanyForm";
-import ProductoForm from './components/producto/ProductoForm'
-import enrutadorBtn from "./components/enrutador";
+import ProductoForm from './components/producto/ProductoForm';
+import EnrutadorList from "./components/MenuApp/Enrutador";
+
 //
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -22,10 +23,9 @@ root.render(
   <Router>
     <Navbar />
     <div className="container my-4">
-      <Route exact path="/enrutadorBtn">{enrutadorBtn}</Route>
-      <Route path="/companyList" component={CompanyList} />
+      <Route path="/" exact component={EnrutadorList} />
+      <Route exact path="/companyList" component={CompanyList} />
       <Route path="/productoList" component={ProductList} />
-
       <Route path="/companyForm" component={CompanyForm} />
       <Route path="/productoForm" component={ProductoForm}/>
       <Route path="/updateCompany/:id" component={CompanyForm} />
