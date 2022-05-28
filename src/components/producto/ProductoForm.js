@@ -58,7 +58,7 @@ const CompanyForm = () => {
       const res = await ProductoServer.getProducto(productoId);
       const data = await res.json();
       console.log(data);
-      const { nombre, descripcion, precio, stock } = data.company;
+      const { nombre, descripcion, precio, stock } = data.producto;
       setProducto({ nombre, descripcion, precio, stock });
     } catch (error) {
       console.log(error);
