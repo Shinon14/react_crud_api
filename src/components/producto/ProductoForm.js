@@ -3,7 +3,7 @@ import * as ProductoServer from "./ProductoServer";
 import { useHistory, useParams } from "react-router";
 
 // ========= inicio del componente CompanyForm=========
-const CompanyForm = () => {
+const ProductoForm = () => {
   // uso de importaciones como variables para usar en el componente
   const history = useHistory();
   const params = useParams();
@@ -44,6 +44,7 @@ const CompanyForm = () => {
         }
       } else {
         await ProductoServer.actualizarProducto(params.id, producto);
+        alert("Producto actualizado")
       }
       // esto es para que se redireccione a la pagina de la empresa
       history.push("/");
@@ -145,4 +146,4 @@ const CompanyForm = () => {
 // ========= fin del componente CompanyForm =========
 
 // siempre que se exporte un componente, se debe exportarlo con el nombre de la variable y el default
-export default CompanyForm;
+export default ProductoForm;

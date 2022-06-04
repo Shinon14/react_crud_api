@@ -23,7 +23,7 @@ root.render(
   <Router>
     <Navbar />
     <div className="container my-4">
-      <Route path="/" exact component={EnrutadorList} />
+      <Route path="/" exact component={CompanyList} />
       <Route exact path="/companyList" component={CompanyList} />
       <Route path="/productoList" component={ProductList} />
       <Route path="/companyForm" component={CompanyForm} />

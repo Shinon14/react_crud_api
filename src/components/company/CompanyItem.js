@@ -11,6 +11,7 @@ const CompanyItem = ({ company, listCompanies }) => {
 
   const handleDelete = async (companyId) => {
     // console.log(companyId);
+    prompt("¿Esta seguro que desea eliminar la compañia?"); 
     await CompanyServer.deleteCompany(companyId);
     listCompanies();
   };

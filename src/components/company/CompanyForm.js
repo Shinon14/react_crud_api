@@ -37,7 +37,8 @@ const CompanyForm = () => {
           setCompany(initialState);
         }
       } else {
-          await CompanyServer.updateCompany(params.id, company);
+        await CompanyServer.updateCompany(params.id, company);
+        alert("compañia actualizada")
       }
       // esto es para que se redireccione a la pagina de la empresa
       history.push("/");
