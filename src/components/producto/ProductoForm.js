@@ -44,7 +44,7 @@ const ProductoForm = () => {
         }
       } else {
         await ProductoServer.actualizarProducto(params.id, producto);
-        alert("Producto actualizado")
+        alert("Producto actualizado");
       }
       // esto es para que se redireccione a la pagina de la empresa
       history.push("/");
@@ -75,71 +75,81 @@ const ProductoForm = () => {
 
   // estructura del codigo
   return (
-    <div className="col-md-3 mx-auto">
-      <h2 className="mb-3 text-center">Producto</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label className="form-label">Nombre</label>
-          <input
-            type="text"
-            name="nombre"
-            value={producto.nombre}
-            onChange={handleInputChange}
-            className="form-control"
-            minLength="2"
-            maxLength="50"
-            autoFocus
-            required
-          />
-        </div>
+    <div className="col-md-3 col-12 mx-auto cssSize flex flex-row-reverse ">
+      <div className="col-12 col-xs-12 m-4">
+        <p className="font-semibold text-xl text-center">
+          Para agregar Rellene los siguientes campos
+        </p>
+        <p className="text-sm text-center">Los campos con (*) son obligatorios.</p>
+      </div>
+      <div className="col-12 col-xs-12 m-4">
+        <h2 className="mb-3 text-center p-2 ">Producto</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label className="form-label">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              value={producto.nombre}
+              onChange={handleInputChange}
+              className="form-control"
+              minLength="2"
+              maxLength="50"
+              autoFocus
+              required
+            />
+          </div>
 
-        <div className="mb-3">
-          <label className="form-label">Descripcion</label>
-          <input
-            type="text"
-            name="descripcion"
-            value={producto.descripcion}
-            onChange={handleInputChange}
-            className="form-control"
-            required
-          />
-        </div>
+          <div className="mb-3">
+            <label className="form-label">Descripcion</label>
+            <input
+              type="text"
+              name="descripcion"
+              value={producto.descripcion}
+              onChange={handleInputChange}
+              className="form-control"
+              required
+            />
+          </div>
 
-        <div className="mb-3">
-          <label className="form-label">Precio</label>
-          <input
-            type="text"
-            name="precio"
-            value={producto.precio}
-            onChange={handleInputChange}
-            className="form-control"
-            maxLength="5"
-            required
-          />
-        </div>
+          <div className="mb-3">
+            <label className="form-label">Precio</label>
+            <input
+              type="text"
+              name="precio"
+              value={producto.precio}
+              onChange={handleInputChange}
+              className="form-control"
+              maxLength="5"
+              required
+            />
+          </div>
 
-        <div className="mb-3">
-          <label className="form-label">Stock</label>
-          <input
-            type="number"
-            name="stock"
-            value={producto.stock}
-            onChange={handleInputChange}
-            className="form-control"
-            required
-          />
-        </div>
+          <div className="mb-3">
+            <label className="form-label">Stock</label>
+            <input
+              type="number"
+              name="stock"
+              value={producto.stock}
+              onChange={handleInputChange}
+              className="form-control"
+              required
+            />
+          </div>
 
-        <div className="d-grid gap-2">
-          {params.id ? (
-            <button type="submit" className="btn btn-block btn-primary">
-              Actualizar Producto
-            </button>
-          ) : (
-            <button className="btn btn-block btn-success">Registrar Producto</button>
-          )}
-        </div>
-      </form>
+          <div className="d-grid gap-2 p-2">
+            {params.id ? (
+              <button type="submit" className="btn btn-block btn-primary">
+                Actualizar 
+              </button>
+            ) : (
+              <button className="btn btn-block btn-success">
+                Registrar 
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

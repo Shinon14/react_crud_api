@@ -7,8 +7,8 @@ import Navbar from "./components/navbar/Navbar";
 import CompanyList from "./components/company/companyList";
 import CompanyForm from "./components/company/CompanyForm";
 import ProductoForm from './components/producto/ProductoForm';
-import EnrutadorList from "./components/MenuApp/Enrutador";
-
+import Companyforms from "./components/company/CompanyForms";
+// import Login from "./components/LoginRegister/SignInSide";
 //
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -22,7 +22,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
     <Navbar />
-    <div className="container my-4">
+    <div className="container my-4 app" >
       <Route path="/" exact component={CompanyList} />
       <Route exact path="/companyList" component={CompanyList} />
       <Route path="/productoList" component={ProductList} />
@@ -30,6 +30,8 @@ root.render(
       <Route path="/productoForm" component={ProductoForm}/>
       <Route path="/updateCompany/:id" component={CompanyForm} />
       <Route path="/updateProducto/:id" component={ProductoForm} />
+      <Route path="/companyForms" component={Companyforms} />
+      {/* <Route path="/login" component={Login} /> */}
 
     </div>
   </Router>

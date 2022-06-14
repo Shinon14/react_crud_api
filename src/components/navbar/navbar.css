@@ -1,0 +1,18 @@
+.cssNav{
+    background: rgb(62,95,124);
+    background: linear-gradient(162deg, rgba(62,95,124,1) 0%, rgba(22,49,74,1) 15%, rgba(34,93,126,1) 60%, rgba(10,83,110,1) 93%);
+}
+
+li h6, h5{
+    color: white;
+    /* background-color: white; */
+    
+}
+.cssNavbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0px 20px;
+  
+}

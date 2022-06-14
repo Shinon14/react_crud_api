@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-// import "bootstrap/js/dist/collapse";
+import "./navbar.css";
+import "bootstrap/js/dist/collapse";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          Ferreteria premuim
+    <nav className="navbar navbar-expand-lg navbar-light bg-light cssNav ">
+      <div className="container-fluid ">
+        <Link className="navbar-brand " to="/">
+
+          <h5>Control de inventario</h5>
         </Link>
         <button
           className="navbar-toggler"
@@ -18,31 +20,31 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 cssNavbar">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Inicios
+              <Link className="nav-link cssWhite" to="/">
+                <h6>Inicio</h6>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/companyForm">
-                Agregar Compañia
+              <Link className="nav-link cssWhite" to="/companyForm">
+                <h6>Agregar compañia</h6>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/productoForm">
-                Agregar producto
+                <h6>Agregar producto</h6>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/companyList">
-                Listar compañias
+                <h6>Listar compañias</h6>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/productoList">
-                Listar Productos
+                <h6>Listar productos</h6>
               </Link>
             </li>
           </ul>

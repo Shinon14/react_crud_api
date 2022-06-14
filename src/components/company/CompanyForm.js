@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import * as CompanyServer from "./CompanyServer";
 import { useHistory, useParams } from "react-router";
-
+import "../../index.css";
 // ========= inicio del componente CompanyForm=========
 const CompanyForm = () => {
   // uso de importaciones como variables para usar en el componente
@@ -38,7 +38,7 @@ const CompanyForm = () => {
         }
       } else {
         await CompanyServer.updateCompany(params.id, company);
-        alert("compañia actualizada")
+        alert("compañia actualizada");
       }
       // esto es para que se redireccione a la pagina de la empresa
       history.push("/");
@@ -69,60 +69,69 @@ const CompanyForm = () => {
 
   // estructura del codigo
   return (
-    <div className="col-md-3 mx-auto">
-      <h2 className="mb-3 text-center">Compañia</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label className="form-label">Nombre</label>
-          <input
-            type="text"
-            name="name"
-            value={company.name}
-            onChange={handleInputChange}
-            className="form-control"
-            minLength="2"
-            maxLength="50"
-            autoFocus
-            required
-          />
+    <div className="row ">
+      <div className=" col-12 col-md-3 mx-auto m-3 cssSize flex justify-between flex-row-reverse flex-column">
+        <div className="col-12 p-2 m-4">
+          <p className="font-semibold text-xl text-center">Para agregar Rellene los siguientes campos</p>
+          <p className="text-sm ">Los campos con (*) son obligatorios.</p>
         </div>
+        <div className="col-12 m-4">
+          <h2 className="mb-3 text-center p-2 ">Compañia</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label className="form-label">Nombre (*)</label>
+              <input
+                type="text"
+                name="name"
+                value={company.name}
+                onChange={handleInputChange}
+                className="form-control"
+                minLength="2"
+                maxLength="50"
+                autoFocus
+                required
+              />
+            </div>
 
-        <div className="mb-3">
-          <label className="form-label">Fecha Fundacion</label>
-          <input
-            type="number"
-            name="foundation"
-            value={company.foundation}
-            onChange={handleInputChange}
-            className="form-control"
-            min="1900"
-            max="2080"
-            required
-          />
-        </div>
+            <div className="mb-3">
+              <label className="form-label">Fecha Fundacion (*)</label>
+              <input
+                type="number"
+                name="foundation"
+                value={company.foundation}
+                onChange={handleInputChange}
+                className="form-control"
+                min="1900"
+                max="2080"
+                required
+              />
+            </div>
 
-        <div className="mb-3">
-          <label className="form-label">Sitio web</label>
-          <input
-            type="text"
-            name="website"
-            value={company.website}
-            onChange={handleInputChange}
-            className="form-control"
-            maxLength="100"
-            required
-          />
+            <div className="mb-3">
+              <label className="form-label">Sitio web</label>
+              <input
+                type="text"
+                name="website"
+                value={company.website}
+                onChange={handleInputChange}
+                className="form-control"
+                maxLength="100"
+              />
+            </div>
+            <div className="d-grid gap-2 p-2">
+              {params.id ? (
+                <button type="submit" className="btn btn-block btn-primary">
+                  Update
+                </button>
+              ) : (
+                <button className="btn btn-block btn-success  ">
+                  Registrar
+                </button>
+              )}
+            </div>
+          </form>
         </div>
-        <div className="d-grid gap-2">
-          {params.id ? (
-            <button type="submit" className="btn btn-block btn-primary">
-              Update
-            </button>
-          ) : (
-            <button className="btn btn-block btn-success">Registrar</button>
-          )}
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
