@@ -8,7 +8,7 @@ import CompanyList from "./components/company/companyList";
 import CompanyForm from "./components/company/CompanyForm";
 import ProductoForm from './components/producto/ProductoForm';
 import Companyforms from "./components/company/CompanyForms";
-// import Login from "./components/LoginRegister/SignInSide";
+import Login from "./components/LoginRegister/SingIn";
 //
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -31,7 +31,7 @@ root.render(
       <Route path="/updateCompany/:id" component={CompanyForm} />
       <Route path="/updateProducto/:id" component={ProductoForm} />
       <Route path="/companyForms" component={Companyforms} />
-      {/* <Route path="/login" component={Login} /> */}
+      <Route path="/login" component={Login} />
 
     </div>
   </Router>

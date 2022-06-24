@@ -71,9 +71,9 @@ const CompanyForm = () => {
   return (
     <div className="row ">
       <div className=" col-12 col-md-3 mx-auto m-3 cssSize flex justify-between flex-row-reverse flex-column">
-        <div className="col-12 p-2 m-4">
-          <p className="font-semibold text-xl text-center">Para agregar Rellene los siguientes campos</p>
-          <p className="text-sm ">Los campos con (*) son obligatorios.</p>
+        <div className="col-12 m-4 ">
+          <p className="font-semibold text-xl text-center">Para agregar una compañia rellene los siguientes campos</p>
+          <p className="text-sm text-center">Los campos con (*) son obligatorios.</p>
         </div>
         <div className="col-12 m-4">
           <h2 className="mb-3 text-center p-2 ">Compañia</h2>

@@ -78,7 +78,7 @@ const ProductoForm = () => {
     <div className="col-md-3 col-12 mx-auto cssSize flex flex-row-reverse ">
       <div className="col-12 col-xs-12 m-4">
         <p className="font-semibold text-xl text-center">
-          Para agregar Rellene los siguientes campos
+          Para agregar un producto rellene los siguientes campos
         </p>
         <p className="text-sm text-center">Los campos con (*) son obligatorios.</p>
       </div>
