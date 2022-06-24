@@ -70,16 +70,16 @@ const CompanyForm = () => {
   // estructura del codigo
   return (
     <div className="row ">
-      <div className=" col-12 col-md-3 mx-auto m-3 cssSize flex justify-between flex-row-reverse flex-column">
+      <div className=" col-12 col-md-3 mx-auto m-4 cssSize flex justify-between flex-row-reverse flex-column">
         <div className="col-12 m-4 ">
-          <p className="font-semibold text-xl text-center">Para agregar una compañia rellene los siguientes campos</p>
+          <p className="font-semibold text-xl text-center">Para agregar un medicamento rellene los siguientes campos</p>
           <p className="text-sm text-center">Los campos con (*) son obligatorios.</p>
         </div>
         <div className="col-12 m-4">
-          <h2 className="mb-3 text-center p-2 ">Compañia</h2>
+          <h2 className="mb-3 text-center  ">Añadir medicamento</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label className="form-label">Nombre (*)</label>
+              <label className="form-label">Nombre farmaco(*)</label>
               <input
                 type="text"
                 name="name"
@@ -94,7 +94,7 @@ const CompanyForm = () => {
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Fecha Fundacion (*)</label>
+              <label className="form-label">Descripcion del producto (*)</label>
               <input
                 type="number"
                 name="foundation"
@@ -108,7 +108,41 @@ const CompanyForm = () => {
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Sitio web</label>
+              <label className="form-label">Creado por</label>
+              <input
+                type="text"
+                name="website"
+                value={company.website}
+                onChange={handleInputChange}
+                className="form-control"
+                maxLength="100"
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Gramaje</label>
+              <input
+                type="text"
+                name="website"
+                value={company.website}
+                onChange={handleInputChange}
+                className="form-control"
+                maxLength="100"
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Unidad de medida</label>
+              <input
+                type="text"
+                name="website"
+                value={company.website}
+                onChange={handleInputChange}
+                className="form-control"
+                maxLength="100"
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Categoria</label>
               <input
                 type="text"
                 name="website"

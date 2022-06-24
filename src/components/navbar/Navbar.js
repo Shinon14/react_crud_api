@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="container-fluid ">
         <Link className="navbar-brand " to="/">
 
-          <h5>Control de inventario</h5>
+          <h5>Farmacia CESFAM</h5>
         </Link>
         <button
           className="navbar-toggler"
@@ -23,30 +23,30 @@ const Navbar = () => {
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 cssNavbar">
             <li className="nav-item">
-              <Link className="nav-link cssWhite" to="/">
-                <h6>Inicio</h6>
+              <Link className="nav-link cssWhite" to="/Login">
+                <h6>Login</h6>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link cssWhite" to="/companyForm">
-                <h6>Agregar compañia</h6>
+                <h6>Agregar Medicamento</h6>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/productoForm">
-                <h6>Agregar producto</h6>
+              <Link className="nav-link" to="/registro">
+                <h6>Crear usuario (Admin)  </h6>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/companyList">
-                <h6>Listar compañias</h6>
+                <h6>Listar Medicamento</h6>
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/productoList">
                 <h6>Listar productos</h6>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
