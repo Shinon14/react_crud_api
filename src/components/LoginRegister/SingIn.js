@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useHistory } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -24,6 +25,19 @@ function Copyright(props) {
       {'.'}
     </Typography>
   );
+}
+function Login() {
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const history = useHistory();
+  React.useEffect(() => {
+    if (localStorage.getItem('token')){
+      history.push('/');
+    }
+  });
+}
+function login(){
+
 }
 
 const theme = createTheme();
@@ -39,8 +53,10 @@ export default function SignIn() {
   };
 
   return (
+    
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
+        
         <CssBaseline />
         <Box
           sx={{
@@ -61,12 +77,13 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
-              id="email"
+              id="username"
               label="Usuario"
-              name="email"
-              autoComplete="email"
+              name="username"
+              autoComplete="username"
               autoFocus
             />
+
             <TextField
               margin="normal"
               required
@@ -85,6 +102,7 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
+              onClick={Login}
               sx={{ mt: 3, mb: 2 }}
             >
               Ingresar

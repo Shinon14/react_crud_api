@@ -78,15 +78,15 @@ const ProductoForm = () => {
     <div className="col-md-3 col-12 mx-auto cssSize flex flex-row-reverse ">
       <div className="col-12 col-xs-12 m-4">
         <p className="font-semibold text-xl text-center">
-          Para agregar un usuario rellene los siguientes campos
+          Para agregar un producto rellene los siguientes campos
         </p>
         <p className="text-sm text-center">Los campos con (*) son obligatorios.</p>
       </div>
       <div className="col-12 col-xs-12 m-4">
-        <h2 className="mb-3 text-center p-2 ">Crear usuario</h2>
+        <h2 className="mb-3 text-center p-2 ">Crear producto</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Usuario (*)</label>
+            <label className="form-label">Nombre (*)</label>
             <input
               type="text"
               name="nombre"
@@ -101,7 +101,7 @@ const ProductoForm = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Correo</label>
+            <label className="form-label">Descripcion</label>
             <input
               type="text"
               name="descripcion"
@@ -113,9 +113,9 @@ const ProductoForm = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Nombre completo(*)</label>
+            <label className="form-label">Precio(*)</label>
             <input
-              type="text"
+              type="number"
               name="precio"
               value={producto.precio}
               onChange={handleInputChange}
@@ -126,7 +126,7 @@ const ProductoForm = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Contraseña(*)</label>
+            <label className="form-label">Stock(*)</label>
             <input
               type="text"
               name="stock"

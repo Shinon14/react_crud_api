@@ -8,7 +8,7 @@ import CompanyList from "./components/company/companyList";
 import CompanyForm from "./components/company/CompanyForm";
 import ProductoForm from './components/producto/ProductoForm';
 import Companyforms from "./components/company/CompanyForms";
-import Login from "./components/LoginRegister/SingIn";
+import Login from "./components/LoginRegister/Login";
 import Registro from "./components/RegisterRegister/SingUp";
 //
 import "bootstrap/dist/js/bootstrap.bundle.min";

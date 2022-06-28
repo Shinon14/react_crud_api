@@ -76,10 +76,10 @@ const CompanyForm = () => {
           <p className="text-sm text-center">Los campos con (*) son obligatorios.</p>
         </div>
         <div className="col-12 m-4">
-          <h2 className="mb-3 text-center  ">Añadir medicamento</h2>
+          <h2 className="mb-3 text-center  ">Añadir compañia</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label className="form-label">Nombre farmaco(*)</label>
+              <label className="form-label">Nombre compañia(*)</label>
               <input
                 type="text"
                 name="name"
@@ -94,7 +94,7 @@ const CompanyForm = () => {
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Descripcion del producto (*)</label>
+              <label className="form-label">Fundacion(*)</label>
               <input
                 type="number"
                 name="foundation"
@@ -108,7 +108,7 @@ const CompanyForm = () => {
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Creado por</label>
+              <label className="form-label">Sitio web</label>
               <input
                 type="text"
                 name="website"
@@ -119,39 +119,7 @@ const CompanyForm = () => {
               />
             </div>
 
-            <div className="mb-3">
-              <label className="form-label">Gramaje</label>
-              <input
-                type="text"
-                name="website"
-                value={company.website}
-                onChange={handleInputChange}
-                className="form-control"
-                maxLength="100"
-              />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Unidad de medida</label>
-              <input
-                type="text"
-                name="website"
-                value={company.website}
-                onChange={handleInputChange}
-                className="form-control"
-                maxLength="100"
-              />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Categoria</label>
-              <input
-                type="text"
-                name="website"
-                value={company.website}
-                onChange={handleInputChange}
-                className="form-control"
-                maxLength="100"
-              />
-            </div>
+    
             <div className="d-grid gap-2 p-2">
               {params.id ? (
                 <button type="submit" className="btn btn-block btn-primary">
