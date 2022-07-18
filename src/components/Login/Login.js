@@ -1,0 +1,40 @@
+import React from "react";
+import { Col, Container, Row, Form, Button } from "react-bootstrap";
+import loginIcon from "../../img/login.svg";
+import loginPrincipal from "../../img/log.svg";
+import "./Login.css";
+
+const Login = () => {
+  return (
+    <>
+      <Container className="mt-5">
+        <Row>
+          <Col lg={4} md={6} sm={12} className="text-center mt-5 p-3">
+            <img
+              className="icon-img justify-content-center "
+              src={loginIcon}
+              alt="icon"
+            />
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Usuario" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Control type="password" placeholder="Contraseña" />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Ingresar al sistema
+              </Button>
+            </Form>
+          </Col>
+          <Col lg={8} md={6} sm={12}>
+            <img className="w-100 p-2 m-5" src={loginPrincipal} alt="" />
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+};
+
+export default Login;
