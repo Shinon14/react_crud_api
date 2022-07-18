@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import * as CompanyServer from "./CompanyServer";
 import { useHistory, useParams } from "react-router";
 import "../../index.css";
+import Navbar from '../navbar/Navbar'
+
+
+
 // ========= inicio del componente CompanyForm=========
 const CompanyForm = () => {
   // uso de importaciones como variables para usar en el componente
@@ -69,6 +73,7 @@ const CompanyForm = () => {
 
   // estructura del codigo
   return (
+    // <Navbar />
     <div className="row ">
       <div className=" col-12 col-md-3 mx-auto m-4 cssSize flex justify-between flex-row-reverse flex-column">
         <div className="col-12 m-4 ">
