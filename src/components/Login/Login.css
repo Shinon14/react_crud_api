@@ -9,3 +9,10 @@
 form{
     background: none;
 }
+h1{
+    color: rgb(77, 1, 77);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    
+}

@@ -5,7 +5,9 @@ import * as CompanyServer from "./CompanyServer";
 import CompanyForm from "./CompanyForm";
 
 const CompanyForms = () => {
+
     <CompanyForm />;
-}
+
+};
 
 export default CompanyForms;

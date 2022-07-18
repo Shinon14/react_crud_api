@@ -28,8 +28,12 @@ const Login = () => {
               </Button>
             </Form>
           </Col>
-          <Col lg={8} md={6} sm={12}>
+          <Col lg={8} md={6} sm={10}>
+            <h1>Iniciar sesion</h1>
             <img className="w-100 p-2 m-5" src={loginPrincipal} alt="" />
+            <p className="font-semibold text-white position-bottom">
+              Para ingresar al sistema por favor ingrese sesion.
+            </p>
           </Col>
         </Row>
       </Container>

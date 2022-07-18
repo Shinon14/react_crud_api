@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import * as CompanyServer from "./CompanyServer";
 import { useHistory, useParams } from "react-router";
 import "../../index.css";
-import Navbar from '../navbar/Navbar'
-
-
+import Navbar from "../navbar/Navbar";
+import Form from "react-bootstrap/Form";
 
 // ========= inicio del componente CompanyForm=========
 const CompanyForm = () => {
@@ -73,26 +72,31 @@ const CompanyForm = () => {
 
   // estructura del codigo
   return (
-    // <Navbar />
     <div className="row ">
-      <div className=" col-12 col-md-3 mx-auto m-4 cssSize flex justify-between flex-row-reverse flex-column">
+      <Navbar />
+      <div className="col-12 col-md-6 mx-auto m-4 cssSize flex justify-between flex-row-reverse flex-column">
         <div className="col-12 m-4 ">
-          <p className="font-semibold text-xl text-center">Para agregar un medicamento rellene los siguientes campos</p>
-          <p className="text-sm text-center">Los campos con (*) son obligatorios.</p>
+          <p className="font-semibold text-xl text-center">
+            Para agregar un medicamento rellene los siguientes campos
+          </p>
+          <p className="text-sm text-center">
+            Los campos con (*) son obligatorios.
+          </p>
         </div>
         <div className="col-12 m-4">
           <h2 className="mb-3 text-center  ">Añadir compañia</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">Nombre compañia(*)</label>
-              <input
+
+              <Form.Control
                 type="text"
+                placeholder="Nombre"
                 name="name"
-                value={company.name}
                 onChange={handleInputChange}
-                className="form-control"
-                minLength="2"
-                maxLength="50"
+                value={company.name}
+                minLength={2}
+                maxLength={50}
                 autoFocus
                 required
               />
@@ -100,14 +104,16 @@ const CompanyForm = () => {
 
             <div className="mb-3">
               <label className="form-label">Fundacion(*)</label>
-              <input
+
+              <Form.Control
                 type="number"
+                placeholder="Fundacion"
                 name="foundation"
-                value={company.foundation}
                 onChange={handleInputChange}
-                className="form-control"
-                min="1900"
-                max="2080"
+                value={company.foundation}
+                minLength={1900}
+                maxLength={2080}
+                
                 required
               />
             </div>
@@ -124,7 +130,6 @@ const CompanyForm = () => {
               />
             </div>
 
-    
             <div className="d-grid gap-2 p-2">
               {params.id ? (
                 <button type="submit" className="btn btn-block btn-primary">
