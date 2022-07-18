@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
-import loginIcon from "../../img/login.svg";
-import loginPrincipal from "../../img/log.svg";
+import loginIcon from "../../../img/login.svg";
+import loginPrincipal from "../../../img/log.svg";
 import "./Login.css";
 
 const Login = () => {

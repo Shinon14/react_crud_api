@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
-import * as ProductoServer from "./ProductoServer";
+import { useState, useEffect } from "react";
+import * as CompanyServer from "./CompanyServer";
 import { useHistory, useParams } from "react-router";
-import Navbar from "../navbar/Navbar";
+import "../../../index.css";
+import Navbar from "../navbar/NavbarUser";
+import Form from "react-bootstrap/Form";
 
 // ========= inicio del componente CompanyForm=========
-const ProductoForm = () => {
+const CompanyForm = () => {
   // uso de importaciones como variables para usar en el componente
   const history = useHistory();
   const params = useParams();
@@ -12,21 +14,15 @@ const ProductoForm = () => {
 
   // ========= Hook para controlar el estado de los inputs =========
 
-  const initialState = {
-    id: 0,
-    nombre: "",
-    descripcion: "",
-    precio: "",
-    stock: "",
-  };
-  const [producto, setProducto] = useState(initialState);
+  const initialState = { id: 0, name: "", foundation: "", site: "" };
+  const [company, setCompany] = useState(initialState);
 
   // ========= termino de Hooks para controlar el estado de los inputs =========
 
   // esto es para que se ejecute cuando se cargue la pagina y se cargue el formulario, haciendo que se escriba lo que esta en el state inicial
   const handleInputChange = (r) => {
     // esto se ejecuta cada vez que se dentro escribe en el input
-    setProducto({ ...producto, [r.target.name]: r.target.value });
+    setCompany({ ...company, [r.target.name]: r.target.value });
   };
 
   // esta es la funcion para crear una nueva compañia
@@ -35,17 +31,17 @@ const ProductoForm = () => {
     try {
       let res;
       if (!params.id) {
-        res = await ProductoServer.registrarProducto(producto);
+        res = await CompanyServer.registerCompany(company);
         const data = await res.json();
 
         console.log(data);
         // esta comprobacion se encarga de coprobar la respuesta
         if (data.message === "Success") {
-          setProducto(initialState);
+          setCompany(initialState);
         }
       } else {
-        await ProductoServer.actualizarProducto(params.id, producto);
-        alert("Producto actualizado");
+        await CompanyServer.updateCompany(params.id, company);
+        alert("compañia actualizada");
       }
       // esto es para que se redireccione a la pagina de la empresa
       history.push("/");
@@ -55,13 +51,13 @@ const ProductoForm = () => {
     }
   };
 
-  const getProducto = async (productoId) => {
+  const getCompany = async (companyId) => {
     try {
-      const res = await ProductoServer.getProducto(productoId);
+      const res = await CompanyServer.getCompany(companyId);
       const data = await res.json();
       console.log(data);
-      const { nombre, descripcion, precio, stock } = data.producto;
-      setProducto({ nombre, descripcion, precio, stock });
+      const { name, foundation, website } = data.company;
+      setCompany({ name, foundation, website });
     } catch (error) {
       console.log(error);
     }
@@ -69,99 +65,89 @@ const ProductoForm = () => {
 
   useEffect(() => {
     if (params.id) {
-      getProducto(params.id);
+      getCompany(params.id);
     }
     // eslint-disble-next-line
   }, []);
 
   // estructura del codigo
   return (
-    <React.Fragment>
-      <Navbar  />
-      <div className="col-md-6 col-12 col-lg-6 mx-auto cssSize flex flex-row-reverse justify-content-center">
-        
-        <div className="col-12 col-xs-12 m-4 mt-5">
+    <div className="row ">
+      <Navbar />
+      <div className="col-12 col-md-6 mx-auto m-4 cssSize flex justify-between flex-row-reverse flex-column">
+        <div className="col-12 m-4 ">
           <p className="font-semibold text-xl text-center">
-            Para agregar un producto rellene los siguientes campos
+            Para agregar un medicamento rellene los siguientes campos
           </p>
           <p className="text-sm text-center">
             Los campos con (*) son obligatorios.
           </p>
-          {/* <img src={imgProducts} alt="" className="pt-2 mt-3"/> */}
-
         </div>
-
-        <div className="col-12 col-xs-12 mt-4">
-          <h2 className="mb-3 text-center p-2 ">Crear producto</h2>
+        <div className="col-12 m-4">
+          <h2 className="mb-3 text-center  ">Añadir compañia</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label className="form-label">Nombre (*)</label>
-              <input
+              <label className="form-label">Nombre compañia(*)</label>
+
+              <Form.Control
                 type="text"
-                name="nombre"
-                value={producto.nombre}
+                placeholder="Nombre"
+                name="name"
                 onChange={handleInputChange}
-                className="form-control"
-                minLength="2"
-                maxLength="50"
+                value={company.name}
+                minLength={2}
+                maxLength={50}
                 autoFocus
                 required
               />
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Descripcion</label>
-              <input
-                type="text"
-                name="descripcion"
-                value={producto.descripcion}
-                onChange={handleInputChange}
-                className="form-control"
-                required
-              />
-            </div>
+              <label className="form-label">Fundacion(*)</label>
 
-            <div className="mb-3">
-              <label className="form-label">Precio(*)</label>
-              <input
+              <Form.Control
                 type="number"
-                name="precio"
-                value={producto.precio}
+                placeholder="Fundacion"
+                name="foundation"
                 onChange={handleInputChange}
-                className="form-control"
-                maxLength="5"
+                value={company.foundation}
+                minLength={1900}
+                maxLength={2080}
+                
                 required
               />
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Stock(*)</label>
+              <label className="form-label">Sitio web</label>
               <input
                 type="text"
-                name="stock"
-                value={producto.stock}
+                name="website"
+                value={company.website}
                 onChange={handleInputChange}
                 className="form-control"
-                required
+                maxLength="100"
               />
             </div>
 
             <div className="d-grid gap-2 p-2">
               {params.id ? (
                 <button type="submit" className="btn btn-block btn-primary">
-                  Actualizar
+                  Update
                 </button>
               ) : (
-                <button className="btn btn-block btn-success">Registrar</button>
+                <button className="btn btn-block btn-success  ">
+                  Registrar
+                </button>
               )}
             </div>
           </form>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 // ========= fin del componente CompanyForm =========
 
 // siempre que se exporte un componente, se debe exportarlo con el nombre de la variable y el default
-export default ProductoForm;
+export default CompanyForm;

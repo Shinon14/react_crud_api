@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as ProductoServer from "./ProductoServer";
 import { useHistory, useParams } from "react-router";
-import Navbar from "../navbar/Navbar";
+import NavUser from '../navbar/NavbarUser';
 
 // ========= inicio del componente CompanyForm=========
 const ProductoForm = () => {
@@ -77,7 +77,7 @@ const ProductoForm = () => {
   // estructura del codigo
   return (
     <React.Fragment>
-      <Navbar  />
+      <NavUser  />
       <div className="col-md-6 col-12 col-lg-6 mx-auto cssSize flex flex-row-reverse justify-content-center">
         
         <div className="col-12 col-xs-12 m-4 mt-5">
