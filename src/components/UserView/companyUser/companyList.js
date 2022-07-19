@@ -4,6 +4,7 @@ import * as CompanyServer from "./CompanyServer";
 // componentes:
 import CompanyItem from "./CompanyItem";
 import Navbar from "../navbar/NavbarUser";
+import Header from "./CompanyHeader";
 
 //
 
@@ -27,6 +28,7 @@ const CompanyList = () => {
   return (
     <React.Fragment>
       <Navbar />
+      <Header/>
       <div className="row">
         {companies.map((company) => (
           <CompanyItem

@@ -12,16 +12,15 @@ function NavbarUser() {
   return (
     <Navbar bg="light" fixed="top" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Gestion de inventario</Navbar.Brand>
+        <Navbar.Brand href="/menuUsuario">Gestion de inventario</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <NavDropdown title="Modificar" id="basic-nav-dropdown">
+            {/* <NavDropdown title="Crear" id="basic-nav-dropdown">
               <NavDropdown.Item href="/companyFormUser">Compañia</NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
               <NavDropdown.Item href="/productosFormUsuario ">Producto</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
 
             <NavDropdown title="Ver" id="basic-nav-dropdown">
               <NavDropdown.Item href="/companyListUser">Compañia</NavDropdown.Item>

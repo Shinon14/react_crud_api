@@ -18,7 +18,7 @@ export const registrarProducto = async (nuevoProducto) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "nombre": String(nuevoProducto.nombre).trim(),
+            "nombre": String(nuevoProducto.nombre),
             "descripcion": String(nuevoProducto.descripcion),
             "precio": parseInt(nuevoProducto.precio),
             "stock": parseInt(nuevoProducto.stock),
@@ -41,10 +41,10 @@ export const actualizarProducto = async (productoId, actProducto) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "nombre": String(actProducto.nombre).trim(),
+            "nombre": String(actProducto.nombre),
             "descripcion": String(actProducto.descripcion),
-            "precio": parseInt(actProducto.precio).trim(),
-            "stock": parseInt(actProducto.stock).trim()
+            "precio": parseInt(actProducto.precio),
+            "stock": parseInt(actProducto.stock)
         })
     })
 };

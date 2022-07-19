@@ -4,53 +4,42 @@ import * as CompanyServer from "./CompanyServer";
 // componentes:
 import CompanyItem from "./CompanyItem";
 import Navbar from "../navbar/Navbar";
+import CompanyHeader from './CompanyHeader'
 //
 
 const CompanyList = () => {
-  const [companies, setCompanies] = React.useState([]);
+  const [medidas, setMedidas] = React.useState([]);
 
-  const listCompanies = async () => {
+  const listarMedidas = async () => {
     try {
-      const res = await CompanyServer.listCompanies();
+      const res = await CompanyServer.listarMedidas();
       const data = await res.json();
-      setCompanies({
-        id: 1,
-        name: "Company 1",
-        foundation: "2020",
-        website: "www.company1.com",
-      });
+      setMedidas(data.medidas);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    listCompanies();
+    listarMedidas();
   }, []);
 
   return (
     <React.Fragment>
       <Navbar />
+      <CompanyHeader/>
       <div className="d-flex container m-5">
         <div className="row">
-          {/* {companies.map((company) => ( */}
-          <CompanyItem
-          // key={company.id}
-          // company={company}
-          // listCompanies={listCompanies}
+          {/* {medidas.map((medida) => ( */}
+          {/* <CompanyItem
+          key={medida.id}
+          medida={medida}
+          listarMedidas={listarMedidas}
           />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          <CompanyItem />
-          {/* ))} */}
+          // <CompanyItem /> */}
+
+
+           {/* ))}  */}
         </div>
       </div>
     </React.Fragment>

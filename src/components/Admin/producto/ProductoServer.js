@@ -43,8 +43,8 @@ export const actualizarProducto = async (productoId, actProducto) => {
         body: JSON.stringify({
             "nombre": String(actProducto.nombre).trim(),
             "descripcion": String(actProducto.descripcion),
-            "precio": parseInt(actProducto.precio).trim(),
-            "stock": parseInt(actProducto.stock).trim()
+            "precio": parseInt(actProducto.precio),
+            "stock": parseInt(actProducto.stock)
         })
     })
 };

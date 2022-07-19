@@ -17,25 +17,17 @@ const CompanyItem = ({ company, listCompanies }) => {
   };
 
   return (
-    <div className="col-md-4 mb-4">
+    <div className="col-md-4 m-5">
       <div className="card card-body">
         <h3 className="card-title">{company.name}</h3>
         <p className="card-text">
           Founded: <strong>{company.foundation}</strong>
         </p>
-        <a
-          href={company.website}
-          className="btn btn-primary"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Ir al sitio
-        </a>
         <button
           onClick={() => company.id && handleDelete(company.id)}
           className="btn btn-danger my-2"
         >
-          Borrar compañia
+          Borrar empresa
         </button>
         <button
           className=" btn btn-secondary"

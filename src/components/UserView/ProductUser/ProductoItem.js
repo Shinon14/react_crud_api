@@ -16,16 +16,19 @@ const ProductoItem = ({ producto, listarProductos }) => {
   };
 
   return (
-    <div className="col-md-4 mb-4">
+    <div className="col-3 col-md-4 mt-3">
       <div className="card card-body">
         <h3 className="card-title">{producto.nombre}</h3>
-        <p className="card-text">
-          Descripcion: <strong>{producto.descripcion}</strong>
-        </p>
         <p
           rel="noopener noreferrer"
         >
-         {producto.precio}
+         Precio: {producto.precio}
+        </p>
+        <p>
+          Stock: {producto.stock}
+        </p>
+        <p className="card-text">
+          Descripcion: {producto.descripcion}
         </p>
         <button
           onClick={() => producto.id && handleDelete(producto.id)}

@@ -44,7 +44,7 @@ const CompanyForm = () => {
         alert("compañia actualizada");
       }
       // esto es para que se redireccione a la pagina de la empresa
-      history.push("/");
+      history.push("/companyListUser");
     } catch (error) {
       // en caso de error, arrojara esto
       console.log(error);
@@ -77,17 +77,17 @@ const CompanyForm = () => {
       <div className="col-12 col-md-6 mx-auto m-4 cssSize flex justify-between flex-row-reverse flex-column">
         <div className="col-12 m-4 ">
           <p className="font-semibold text-xl text-center">
-            Para agregar un medicamento rellene los siguientes campos
+            Para agregar una empresa rellene los siguientes campos
           </p>
           <p className="text-sm text-center">
             Los campos con (*) son obligatorios.
           </p>
         </div>
         <div className="col-12 m-4">
-          <h2 className="mb-3 text-center  ">Añadir compañia</h2>
+          <h2 className="mb-3 text-center  ">Añadir empresa</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label className="form-label">Nombre compañia(*)</label>
+              <label className="form-label">Nombre empresa(*)</label>
 
               <Form.Control
                 type="text"
@@ -133,7 +133,7 @@ const CompanyForm = () => {
             <div className="d-grid gap-2 p-2">
               {params.id ? (
                 <button type="submit" className="btn btn-block btn-primary">
-                  Update
+                  Actualizar
                 </button>
               ) : (
                 <button className="btn btn-block btn-success  ">

@@ -34,16 +34,18 @@ root.render(
       {/* <Route /> */}
       {/* RUTAS DE COMPANY */}
       <Route exact path="/companyList" component={CompanyList} />
-      <Route path="/updateCompany/:id" component={CompanyForm} />
-      <Route path="/updateProducto/:id" component={ProductoForm} />
+
       {/* RUTAS DE PRODUCTO */}
       <Route path="/productoList" component={ProductList} />
       <Route path="/companyForm" component={CompanyForm} />
       <Route path="/productoForm" component={ProductoForm}/>
       <Route path="/registro" component={Registro} />
+      <Route path="/actualizarEmpresa/:id" component={CompanyForm} />
+      <Route path="/actualizarProducto/:id" component={ProductoForm} />
       {/* RUTAS PRINCIPALES */}
       <Route path="/LoginAdmin" component={LoginAdmin} />
       <Route path="/MenuAdmin" component={MenuAdmin} />
+
       
       {/* TERMINO RUTA DE EDICION DE USUARIOS */}
       {/* Termino de rutas de administrador */}
@@ -54,7 +56,9 @@ root.render(
       <Route path="/productosFormUsuario" component={ProductFormUser} />
       <Route path="/productosUsuario" component={ProductoListUser} />
       <Route path="/LoginUsuario" component={LoginUsuario} />
-      <Route path="/menuUsuario" component={MenuUser } />
+      <Route path="/menuUsuario" component={MenuUser} />
+      <Route path="/updateCompany/:id" component={CompanyFormUser} />
+      <Route path="/updateProducto/:id" component={ProductFormUser} />
       {/* termino de rutas de usuario */}
 
 

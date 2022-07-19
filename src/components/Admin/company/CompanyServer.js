@@ -1,27 +1,26 @@
-const API_URL = "http://127.0.0.1:8000/api/companies/";
+const API_URL = "http://localhost:8000/products/measure-unit/";
 
 
-export const listCompanies = async () => {
+export const listarMedidas = async () => {
     return await fetch(API_URL);  
 };
 
-export const getCompany = async (companyId) => {
-    return await fetch(`${API_URL}${companyId}`);
+export const getCompany = async (measureId) => {
+    return await fetch(`${API_URL}${measureId}`);
 };
 
 
-export const registerCompany = async (newCompany) => {
+export const registerCompany = async (newMeasureUnit) => {
   
     return await fetch(API_URL, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
-            // 'Authorization': localStorage.getItem('token')
+            'Authorization': '94bf6de8ae932f6dc846f3ae839278de13c5276c'
         },
         body: JSON.stringify({
-            "name": String(newCompany.name).trim(),
-            "foundation": parseInt(newCompany.foundation),
-            "website": String(newCompany.website).trim(),
+            "descripcion": String(newMeasureUnit.name).trim(),
+
         })
     })
 };

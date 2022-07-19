@@ -5,17 +5,17 @@ import "./CompanyList.css";
 
 import * as CompanyServer from "./CompanyServer";
 
-const CompanyItem = ({ company, listCompanies }) => {
+const CompanyItem = ({ medida, listarMedidas }) => {
   // console.log(props)
-  // console.log(company)
+  console.log(medida)
 
   const history = useHistory();
 
-  const handleDelete = async (companyId) => {
+  const handleDelete = async (measureId) => {
     // console.log(companyId);
     prompt("¿Esta seguro que desea eliminar la compañia?");
-    await CompanyServer.deleteCompany(companyId);
-    listCompanies();
+    await CompanyServer.deleteCompany(measureId);
+    listarMedidas();
   };
 
   return (
@@ -24,13 +24,9 @@ const CompanyItem = ({ company, listCompanies }) => {
         {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
         <Card.Body>
           <Card.Title>Producto de prueba</Card.Title>
-          <Card.Text>
-            Producto de prueba
-          </Card.Text>
-          <Card.Subtitle className="mb-2 text-muted">Gramaje: (valor)</Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">Creado por: (valor)</Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">Unidad de medida: (valor)</Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">Categoria: (valor)</Card.Subtitle>
+
+          <Card.Subtitle className="mb-2 text-muted">{medida.descripcion }</Card.Subtitle>
+
           
           <Button variant="primary">Editar </Button>
         </Card.Body>

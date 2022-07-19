@@ -14,25 +14,10 @@ const MenuAdmin = () => {
         </tr>
       </thead>
       <tbody>
+
         <tr>
           <td className="d-flex justify-content-center ">
-            <Button variant="outlined" color="secondary" className="width-auto" href="/registro">
-              Registrar usuario
-            </Button>
-          </td>
-          <td>Agregar un usuario al sistema (solo administrador).</td>
-        </tr>
-        <tr>
-          <td className="d-flex justify-content-center ">
-            <Button variant="outlined" color="secondary" className="width-auto" disabled href="/login">
-              Borrar usuarios
-            </Button>
-          </td>
-          <td>Borrar un usuario del sistema (solo administrador).</td>
-        </tr>
-        <tr>
-          <td className="d-flex justify-content-center ">
-            <Button variant="outlined" color="secondary" className="width-auto" href="/companyForm">
+            <Button variant="outlined" color="secondary" className="width-auto" href="/companyFormUser">
               Registrar empresa
             </Button>
           </td>
@@ -40,7 +25,7 @@ const MenuAdmin = () => {
         </tr>
         <tr>
           <td className="d-flex justify-content-center ">
-            <Button variant="outlined" color="secondary" className="width-auto" href="/companyForm">
+            <Button variant="outlined" color="secondary" className="width-auto" href="/productosFormUsuario">
               Registrar producto
             </Button>
           </td>
@@ -48,7 +33,7 @@ const MenuAdmin = () => {
         </tr>
         <tr>
           <td className="d-flex justify-content-center ">
-            <Button variant="outlined" color="secondary" className="width-auto"href="/productoList">
+            <Button variant="outlined" color="secondary" className="width-auto"href="/productosUsuario">
               Ver productos
             </Button>
           </td>
@@ -56,7 +41,7 @@ const MenuAdmin = () => {
         </tr>
         <tr>
           <td className="d-flex justify-content-center ">
-            <Button variant="outlined" color="secondary" className="width-auto" href="/companyList">
+            <Button variant="outlined" color="secondary" className="width-auto" href="/companyListUser">
               Ver empresas 
             </Button>
           </td>
