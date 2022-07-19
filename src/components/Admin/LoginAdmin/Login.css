@@ -1,0 +1,18 @@
+.icon-img{
+    width: 160px;
+    height: 160px;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+form{
+    background: none;
+}
+h1{
+    color: rgb(77, 1, 77);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    
+}

@@ -64,3 +64,6 @@ button{
   align-items: center;
   height: 60vh;
 }
+table{
+  margin: 10% auto;
+}

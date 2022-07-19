@@ -17,25 +17,18 @@ function NavbarUser() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <NavDropdown title="Agregar" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/companyForm">Compañia</NavDropdown.Item>
+            <NavDropdown title="Modificar" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/companyFormUser">Compañia</NavDropdown.Item>
               {/* <NavDropdown.Divider /> */}
-              <NavDropdown.Item href="/productoForm">Producto</NavDropdown.Item>
+              <NavDropdown.Item href="/productosFormUsuario ">Producto</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="Ver" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/companyList">Compañia</NavDropdown.Item>
-              <NavDropdown.Item href="/productoList">Producto</NavDropdown.Item>
+              <NavDropdown.Item href="/companyListUser">Compañia</NavDropdown.Item>
+              <NavDropdown.Item href="/productosUsuario">Producto</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Gestion de usuarios" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/companyList">
-                Agregar usuario
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/productoList">
-                Eliminar Usuario
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link eventKey={2} href="/Login">
+
+            <Nav.Link eventKey={2} href="/LoginUsuario">
               <LogoutIcon className="me-1 font-medium" />
               Salir
             </Nav.Link>

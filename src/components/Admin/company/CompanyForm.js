@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import * as CompanyServer from "./CompanyServer";
 import { useHistory, useParams } from "react-router";
-import "../../index.css";
+import "../../../index.css";
 import Navbar from "../navbar/Navbar";
 import Form from "react-bootstrap/Form";
 
