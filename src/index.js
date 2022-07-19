@@ -6,17 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 import CompanyList from "./components/Admin/company/companyList";
 import CompanyForm from "./components/Admin/company/CompanyForm";
 import ProductoForm from './components/Admin/producto/ProductoForm';
-import Companyforms from "./components/Admin/company/CompanyForms";
 import LoginAdmin from "./components/Admin/LoginAdmin/Login";
 import Registro from "./components/Admin/RegisterRegister/SingUp";
 import ProductList from "./components/Admin/producto/ProductoLista";
+import MenuAdmin from './components/Admin/MenuApp/Enrutador'
 // components user:
 import CompanyFormUser from './components/UserView/companyUser/CompanyForm';
 import CompanyListUser from './components/UserView/companyUser/companyList';
 import ProductFormUser from './components/UserView/ProductUser/ProductoForm';
 import ProductoListUser from './components/UserView/ProductUser/ProductoLista';
 import LoginUsuario from './components/UserView/LoginUser/Login';
-import MenuAdmin from './components/Admin/MenuApp/Enrutador'
+import MenuUser from './components/UserView/MenuAppUser/Enrutador';
 // bootstrap
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -36,7 +36,6 @@ root.render(
       <Route exact path="/companyList" component={CompanyList} />
       <Route path="/updateCompany/:id" component={CompanyForm} />
       <Route path="/updateProducto/:id" component={ProductoForm} />
-      <Route path="/companyForms" component={Companyforms} />
       {/* RUTAS DE PRODUCTO */}
       <Route path="/productoList" component={ProductList} />
       <Route path="/companyForm" component={CompanyForm} />
@@ -55,7 +54,7 @@ root.render(
       <Route path="/productosFormUsuario" component={ProductFormUser} />
       <Route path="/productosUsuario" component={ProductoListUser} />
       <Route path="/LoginUsuario" component={LoginUsuario} />
-      
+      <Route path="/menuUsuario" component={MenuUser } />
       {/* termino de rutas de usuario */}
 
 

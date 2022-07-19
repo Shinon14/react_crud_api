@@ -2,7 +2,7 @@ import React from "react";
 
 // componentes:
 import EnrutadorItem from "./EnrutadorItem";
-import Navbar from "../navbar/Navbar";
+import Navbar from "../navbar/NavbarUser";
 import HeaderEnrutador from "./HeaderEnrutador";
 
 //

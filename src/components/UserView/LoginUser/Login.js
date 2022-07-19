@@ -23,7 +23,7 @@ const Login = () => {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Control type="password" placeholder="Contraseña" />
               </Form.Group>
-              <Button variant="primary" type="submit" href="/companyFormUser">
+              <Button variant="primary" type="submit" href="/menuUsuario">
                 Ingresar al sistema
               </Button>
             </Form>

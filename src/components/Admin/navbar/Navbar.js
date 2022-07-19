@@ -12,7 +12,7 @@ const NavbarAdmin = () => {
   return (
     <Navbar bg="light" fixed="top" expand="lg" >
       <Container>
-        <Navbar.Brand href="#home">Administracion sistema</Navbar.Brand>
+        <Navbar.Brand href="/MenuAdmin">Administracion sistema</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
