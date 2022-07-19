@@ -44,7 +44,7 @@ const NavbarAdmin = () => {
               <NavDropdown.Item href="/companyList">Compañia</NavDropdown.Item>
               <NavDropdown.Item href="/productoList">Producto</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Gestion de usuarios" id="basic-nav-dropdown">
+            <NavDropdown title="Gestion de usuarios" id="basic-nav-dropdown" disabled>
               <NavDropdown.Item href="/registro">
                 Agregar usuario
               </NavDropdown.Item>

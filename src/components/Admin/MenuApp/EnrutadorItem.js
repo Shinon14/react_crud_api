@@ -16,7 +16,7 @@ const MenuAdmin = () => {
       <tbody>
         <tr>
           <td className="d-flex justify-content-center ">
-            <Button variant="outlined" color="secondary" className="width-auto" href="/registro">
+            <Button variant="outlined" color="secondary" disabled className="width-auto" href="/registro">
               Registrar usuario
             </Button>
           </td>

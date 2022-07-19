@@ -44,7 +44,7 @@ const CompanyForm = () => {
         alert("compañia actualizada");
       }
       // esto es para que se redireccione a la pagina de la empresa
-      history.push("/");
+      history.push("/companyList");
     } catch (error) {
       // en caso de error, arrojara esto
       console.log(error);

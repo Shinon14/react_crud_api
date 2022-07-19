@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 // componentes:
 import ProductItem from "./ProductoItem";
 import Navbar from "../navbar/Navbar";
-
+import Header from "./ProductoHeader";
 //
 
 const ProductList = () => {
@@ -29,24 +29,17 @@ const ProductList = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <div className="d-flex container m-5">
+      <Header />
+      <div className=" titulo m-5">
         <div className="row">
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
+          {productos.map((producto) => (
+            <ProductItem
+              key={producto.id}
+              producto={producto}
+              listarProductos={listarProductos}
+            />
+          ))}
         </div>
-        {/* {productos.map((producto) => ( */}
-        {/* <ProductItem
-            key={producto.id}
-            producto={producto}
-            listarProductos={listarProductos}
-          /> */}
-        {/* ))} */}
       </div>
     </React.Fragment>
   );
