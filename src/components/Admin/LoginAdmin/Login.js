@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 import loginIcon from "../../../img/login.svg";
-import loginPrincipal from "../../../img/log.svg";
+import loginPrincipal from "../../../img/admin.svg";
 import "./Login.css";
 
 const Login = () => {
@@ -28,9 +28,9 @@ const Login = () => {
               </Button>
             </Form>
           </Col>
-          <Col lg={8} md={6} sm={10}>
-            <h1>Iniciar sesion</h1>
-            <img className="w-100 p-2 m-5" src={loginPrincipal} alt="" />
+          <Col lg={7} md={6} sm={10} >
+            <h1>Ingreso administrador</h1>
+            <img className="w-100 p-5 m-5" src={loginPrincipal} alt="" />
             <p className="font-semibold text-white position-bottom">
               Para ingresar al sistema por favor ingrese sesion.
             </p>

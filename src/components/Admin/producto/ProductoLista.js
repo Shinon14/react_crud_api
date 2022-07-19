@@ -29,14 +29,24 @@ const ProductList = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <div className="row">
-        {productos.map((producto) => (
-          <ProductItem
+      <div className="d-flex container m-5">
+        <div className="row">
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+        </div>
+        {/* {productos.map((producto) => ( */}
+        {/* <ProductItem
             key={producto.id}
             producto={producto}
             listarProductos={listarProductos}
-          />
-        ))}
+          /> */}
+        {/* ))} */}
       </div>
     </React.Fragment>
   );

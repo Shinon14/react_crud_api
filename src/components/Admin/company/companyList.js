@@ -4,7 +4,6 @@ import * as CompanyServer from "./CompanyServer";
 // componentes:
 import CompanyItem from "./CompanyItem";
 import Navbar from "../navbar/Navbar";
-
 //
 
 const CompanyList = () => {
@@ -14,7 +13,12 @@ const CompanyList = () => {
     try {
       const res = await CompanyServer.listCompanies();
       const data = await res.json();
-      setCompanies(data.companies);
+      setCompanies({
+        id: 1,
+        name: "Company 1",
+        foundation: "2020",
+        website: "www.company1.com",
+      });
     } catch (error) {
       console.log(error);
     }
@@ -27,14 +31,27 @@ const CompanyList = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <div className="row">
-        {companies.map((company) => (
+      <div className="d-flex container m-5">
+        <div className="row">
+          {/* {companies.map((company) => ( */}
           <CompanyItem
-            key={company.id}
-            company={company}
-            listCompanies={listCompanies}
+          // key={company.id}
+          // company={company}
+          // listCompanies={listCompanies}
           />
-        ))}
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          <CompanyItem />
+          {/* ))} */}
+        </div>
       </div>
     </React.Fragment>
   );
